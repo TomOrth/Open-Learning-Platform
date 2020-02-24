@@ -1,7 +1,1 @@
 <p>Hello!</p>
-<% if current_educator %>
-  <%= link_to('Logout', destroy_educator_session_path, method: :delete) %> 
-<% else %>
-  <%= link_to('Log-in', new_educator_session_path, method: :get) %>
-<% end %>
-    

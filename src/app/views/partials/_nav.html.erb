@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">OLP</a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home</span></a>
+      </li>
+      <% if current_educator %>
+        <%= link_to('Profile', educator_path(current_educator), method: :get, :class => "nav-link") %>
+        <%= link_to('Logout', destroy_educator_session_path, method: :delete, :class => "nav-link") %>
+      <% else %>
+        <%= link_to('Log-in', new_educator_session_path, method: :get, :class => "nav-link") %>
+      <% end %>
+    </ul>
+  </div>
+</nav>
