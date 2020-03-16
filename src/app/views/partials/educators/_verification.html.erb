@@ -1,0 +1,20 @@
+<%= form_with(model: educator, local: true) do |form| %>
+    <% if educator.errors.any? %>
+        <div id="error_explanation">
+        <h2><%= pluralize(educator.errors.count, "error") %> prohibited this educator from being saved:</h2>
+    
+        <ul>
+            <% educator.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+        </ul>
+        </div>
+    <% end %>
+    <%= form.file_field :paperwork %>
+    <div class="actions">
+        <%= form.submit %>
+    </div>
+    <% if educator.paperwork.attached? %>
+        <%= link_to 'Download PDF', educator.paperwork, target: "_blank" %>
+    <% end %>
+<% end %>    

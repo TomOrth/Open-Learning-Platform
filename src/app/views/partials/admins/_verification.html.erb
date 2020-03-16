@@ -1,0 +1,30 @@
+<tbody>
+   <table class="table">
+      <thead>
+        <tr>
+         <th scope="col">First Name</th>
+         <th scope="col">Last Name</th>
+         <th scope="col">Email</th>
+         <th scope="col">Verfied?</th>
+         <th scope="col">Verification Paperwork</th>
+         <th scope="col">Verfiy Educator</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @educators.each do |edu|%>
+         <tr>
+         <td><%= edu.first_name %></td>     
+         <td><%= edu.last_name %></td>
+         <td><%= edu.email %></td>
+         <td><%= edu.verified %></td>
+         <td>
+         <% if edu.paperwork.attached? %>
+           <%= link_to 'Download Paperwork', edu.paperwork, target: "_blank" %>
+         <% end %>
+         </td>
+         <td><%= link_to('Verify', "/educators/#{edu.id}/verify", method: :post) %></td>
+         </tr>
+      <% end %>
+      </tbody
+      </table>
+</tbody>
