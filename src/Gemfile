@@ -15,6 +15,8 @@ gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
+# JQuery installation
+gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
@@ -25,7 +27,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 # Use figaro for configuration
 gem 'figaro'
-
+# Use pg for postgres
+gem 'pg'
 # Use for styling
 gem 'bootstrap',     '4.1.1'
 gem 'material-sass', '4.1.1'
