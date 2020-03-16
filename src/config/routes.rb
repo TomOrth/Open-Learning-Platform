@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :lesson_plans 
+  resources :lesson_plans
   devise_for :educators, path: 'educators', controllers: {
     passwords: 'educators/passwords',
     registrations: 'educators/registrations',
@@ -10,11 +10,8 @@ Rails.application.routes.draw do
     registrations: 'admins/registrations',
     sessions: 'admins/sessions'
   }
-
   resources :educators
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :admins
+  post "educators/:id/verify", to: "educators#verify"
   root to: "home#index"
-  namespace :dashboard do
-     resources :admins
-  end
 end
