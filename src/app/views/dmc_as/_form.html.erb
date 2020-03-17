@@ -1,0 +1,32 @@
+<%= form_with(model: dmca, local: true) do |form| %>
+  <% if dmca.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dmca.errors.count, "error") %> prohibited this dmca from being saved:</h2>
+
+      <ul>
+        <% dmca.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lesson_plan %>
+    <%= form.text_field :lesson_plan %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

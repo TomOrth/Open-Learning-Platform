@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+# Passwords controller for the +Admin+ user
+# This is used by devise internally
+# This was generated in order to allow the admins_controller to exist
+# Commented code is left in place as a reference
 class Admins::PasswordsController < Devise::PasswordsController
   # GET /resource/password/new
   # def new

@@ -1,5 +1,8 @@
 # frozen_string_literal: true
-
+# Sessions controller for the +Educator+ user
+# This is used by devise internally
+# This was generated in order to allow the educators_controller to exist
+# Commented code is left in place as a reference
 class Educators::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 

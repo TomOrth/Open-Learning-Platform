@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dmcas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Lesson plan</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dmcas.each do |dmca| %>
+      <tr>
+        <td><%= dmca.name %></td>
+        <td><%= dmca.description %></td>
+        <td><%= dmca.lesson_plan %></td>
+        <td><%= link_to 'Show', dmca %></td>
+        <td><%= link_to 'Edit', edit_dmca_path(dmca) %></td>
+        <td><%= link_to 'Destroy', dmca, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dmca', new_dmca_path %>

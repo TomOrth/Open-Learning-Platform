@@ -1,0 +1,2 @@
+module DmcAsHelper
+end

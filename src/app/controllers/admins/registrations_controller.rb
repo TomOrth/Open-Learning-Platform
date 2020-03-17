@@ -1,5 +1,10 @@
 # frozen_string_literal: true
 
+# Registration controller for the +Admin+ user
+# If new parameters for registration were needed, they'd be place here
+# This is used by devise internally
+# This was generated in order to allow the admins_controller to exist
+# Commented code is left in place as a reference
 class Admins::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]

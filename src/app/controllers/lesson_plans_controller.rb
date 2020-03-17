@@ -1,22 +1,25 @@
+# This controller will handle different actions for a +LessonPlan+
 class LessonPlansController < ApplicationController
   before_action :set_lesson_plan, only: [:show, :edit, :update, :destroy]
-
-  # GET /lesson_plans/1
-  # GET /lesson_plans/1.json
+  before_action :authenticate_educator!
+  # GET /lesson_plans/:id where :id is the lesson plan id
+  # This will allow to view the individiual lesson plan
   def show
   end
 
   # GET /lesson_plans/new
+  # This will create a new lesson plan with a title, description, and files
   def new
     @lesson_plan = LessonPlan.new
   end
 
   # GET /lesson_plans/1/edit
+  # This will allow educators to edit their lesson plan
   def edit
   end
 
   # POST /lesson_plans
-  # POST /lesson_plans.json
+  # This will create a new lesson plan
   def create
     @lesson_plan = LessonPlan.new(lesson_plan_params)
     @lesson_plan.educator_id = current_educator.id
@@ -31,8 +34,8 @@ class LessonPlansController < ApplicationController
     end
   end
 
-  # PATCH/PUT /lesson_plans/1
-  # PATCH/PUT /lesson_plans/1.json
+  # PATCH/PUT /lesson_plans/:id where :id is the lesson plan id
+  # This will update a lesson plan
   def update
     respond_to do |format|
       if @lesson_plan.update(lesson_plan_params)
@@ -45,8 +48,8 @@ class LessonPlansController < ApplicationController
     end
   end
 
-  # DELETE /lesson_plans/1
-  # DELETE /lesson_plans/1.json
+  # DELETE /lesson_plans/:id where :id is the lesson plan id
+  # This will delete a lesson plan
   def destroy
     @lesson_plan.destroy
     respond_to do |format|

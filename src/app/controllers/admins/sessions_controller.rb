@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+# Session controller for the +Admin+ user
+# This is used by devise internally
+# This was generated in order to allow the admins_controller to exist
+# Commented code is left in place as a reference
 class Admins::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 

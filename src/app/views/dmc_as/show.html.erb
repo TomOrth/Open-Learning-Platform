@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @dmca.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @dmca.description %>
+</p>
+
+<p>
+  <strong>Lesson plan:</strong>
+  <%= @dmca.lesson_plan %>
+</p>
+
+<%= link_to 'Edit', edit_dmca_path(@dmca) %> |
+<%= link_to 'Back', dmcas_path %>
