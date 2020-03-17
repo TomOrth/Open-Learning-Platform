@@ -1,6 +1,7 @@
 class EducatorsController < ApplicationController
   before_action :set_educator, only: [:update, :show]
   def show
+    @lesson_plans = LessonPlan.where(educator_id: current_educator.id).all
   end
 
   def update

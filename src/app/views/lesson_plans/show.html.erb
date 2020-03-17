@@ -1,4 +1,15 @@
-<p id="notice"><%= notice %></p>
+<h2>Name</h2>
+<h4><%= @lesson_plan.name %></h4>
+
+<h2>Description</h2>
+<h4><%= @lesson_plan.description %></h4>
+
+<h2>Files:</h2>
+<ul>
+  <% @lesson_plan.contents.all.each do |file| %>
+    <li><%= link_to file.filename, file, target: '_blank' %></li>
+  <% end %>
+</ul>
 
 <%= link_to 'Edit', edit_lesson_plan_path(@lesson_plan) %> |
 <%= link_to 'Back', lesson_plans_path %>

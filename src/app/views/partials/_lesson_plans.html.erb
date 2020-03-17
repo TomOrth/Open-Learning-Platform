@@ -1,0 +1,26 @@
+<% if not lesson_plans.nil? %>
+<tbody>
+   <table class="table">
+      <thead>
+        <tr>
+         <th scope="col">Name</th>
+         <th scope="col">Description</th>
+         <th scope="col">Show</th>
+         <th scope="col">Edit</th>
+         <th scope="col">Destroy</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% lesson_plans.each do |lp|%>
+         <tr>
+         <td><%= lp.name %></td>     
+         <td><%= lp.description %></td>
+         <td><%= link_to 'Show', lp %></td>
+         <td><%= link_to 'Edit', edit_lesson_plan_path(lp) %></td>
+         <td><%= link_to 'Destroy', lp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         </tr>
+      <% end %>
+      </tbody
+      </table>
+</tbody>
+<% end %>

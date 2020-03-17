@@ -1,1 +1,39 @@
-<p>Hello! Welcome to the Open Learning Platform! A platform for verified educators to upload lesson plans (that they have the legal rights to) in order to help with the education inequality issue.</p>
+<% if current_admin or current_educator %>
+    <%= form_tag(root_path, method: :get) do %>
+        <div class="input-group mb-3">
+        <%= text_field_tag :search, @search, class: "form-control", placeholder: "Search" %>
+        <%= submit_tag 'Submit', class: "btn btn-primary" %>
+        </div>
+    <% if @lesson_plans.length > 0 %>
+    <tbody>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Show</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Destroy</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @lesson_plans.each do |lp|%>
+                <tr>
+                <td><%= lp.name %></td>     
+                <td><%= lp.description %></td>
+                <td><%= link_to 'Show', lp %></td>
+                <td><%= link_to 'Edit', edit_lesson_plan_path(lp) %></td>
+                <td><%= link_to 'Destroy', lp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+            <% end %>
+            </tbody
+            </table>
+    </tbody>
+    <% else %>
+        <p><%= @search %></p>
+        <p>No lesson plans found</p>
+    <% end %>
+    <% end %>
+<% else %>
+  <p>Hello! Welcome to the Open Learning Platform! A platform for verified educators to upload lesson plans (that they have the legal rights to) in order to help with the education inequality issue.</p>
+<% end %>

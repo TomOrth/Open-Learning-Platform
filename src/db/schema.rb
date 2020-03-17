@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_16_040824) do
+ActiveRecord::Schema.define(version: 2020_03_17_021100) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2020_03_16_040824) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "verified", null: false, default: false
+    t.boolean "verified"
     t.string "first_name"
     t.string "last_name"
     t.index ["email"], name: "index_educators_on_email", unique: true
@@ -67,7 +67,11 @@ ActiveRecord::Schema.define(version: 2020_03_16_040824) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "description"
+    t.bigint "educator_id", null: false
+    t.index ["educator_id"], name: "index_lesson_plans_on_educator_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "lesson_plans", "educators"
 end

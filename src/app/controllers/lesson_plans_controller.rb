@@ -1,12 +1,6 @@
 class LessonPlansController < ApplicationController
   before_action :set_lesson_plan, only: [:show, :edit, :update, :destroy]
 
-  # GET /lesson_plans
-  # GET /lesson_plans.json
-  def index
-    @lesson_plans = LessonPlan.all
-  end
-
   # GET /lesson_plans/1
   # GET /lesson_plans/1.json
   def show
@@ -25,10 +19,10 @@ class LessonPlansController < ApplicationController
   # POST /lesson_plans.json
   def create
     @lesson_plan = LessonPlan.new(lesson_plan_params)
-
+    @lesson_plan.educator_id = current_educator.id
     respond_to do |format|
       if @lesson_plan.save
-        format.html { redirect_to @lesson_plan, notice: 'Lesson plan was successfully created.' }
+        format.html { redirect_to current_educator, notice: 'Lesson plan was successfully created.' }
         format.json { render :show, status: :created, location: @lesson_plan }
       else
         format.html { render :new }
@@ -42,7 +36,7 @@ class LessonPlansController < ApplicationController
   def update
     respond_to do |format|
       if @lesson_plan.update(lesson_plan_params)
-        format.html { redirect_to @lesson_plan, notice: 'Lesson plan was successfully updated.' }
+        format.html { redirect_to current_educator, notice: 'Lesson plan was successfully updated.' }
         format.json { render :show, status: :ok, location: @lesson_plan }
       else
         format.html { render :edit }
@@ -56,7 +50,7 @@ class LessonPlansController < ApplicationController
   def destroy
     @lesson_plan.destroy
     respond_to do |format|
-      format.html { redirect_to lesson_plans_url, notice: 'Lesson plan was successfully destroyed.' }
+      format.html { redirect_to current_educator, notice: 'Lesson plan was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +63,6 @@ class LessonPlansController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def lesson_plan_params
-      params.fetch(:lesson_plan, {})
+      params.require(:lesson_plan).permit(:name, :description, contents: [])
     end
 end

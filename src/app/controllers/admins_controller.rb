@@ -1,7 +1,7 @@
 class AdminsController < ApplicationController
     before_action :set_admin
     def show
-        @educators = Educator.where(verified: false).all
+        @educators = Educator.where(verified: [false, nil]).all
     end
 
     private
