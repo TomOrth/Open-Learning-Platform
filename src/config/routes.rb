@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  #resources :dmcas
   resources :lesson_plans
   devise_for :educators, path: 'educators', controllers: {
     passwords: 'educators/passwords',
