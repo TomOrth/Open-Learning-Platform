@@ -11,4 +11,5 @@ class Educator < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_one_attached :paperwork
+  has_many :lesson_plans
 end

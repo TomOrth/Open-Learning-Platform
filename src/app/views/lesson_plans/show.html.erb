@@ -11,5 +11,6 @@
   <% end %>
 </ul>
 
-<%= link_to 'Edit', edit_lesson_plan_path(@lesson_plan) %> |
-<%= link_to 'Back', lesson_plans_path %>
+<% if current_educator.id == @lesson_plan.id %> 
+  <%= link_to 'Edit', edit_lesson_plan_path(@lesson_plan) %>
+<% end %>
