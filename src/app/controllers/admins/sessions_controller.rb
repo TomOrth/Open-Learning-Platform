@@ -1,5 +1,11 @@
 # frozen_string_literal: true
 
+# Project Name: Open Learning Platform
+# Descriptin: Platform for K-12 educators to upload lesson plans
+# Filename: sessions_controller.rb
+# Description: A controller for the logging in of admins
+# Last date modified: 3/26/2020
+
 # Session controller for the +Admin+ user
 # This is used by devise internally
 # This was generated in order to allow the admins_controller to exist

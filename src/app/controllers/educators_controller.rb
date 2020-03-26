@@ -1,3 +1,9 @@
+# Project Name: Open Learning Platform
+# Descriptin: Platform for K-12 educators to upload lesson plans
+# Filename: educators_controller.rb
+# Description: A controller for the educators of the site
+# Last date modified: 3/26/2020
+
 # This is the controller for the +Educator+ user
 # This is where actions related to the controller will be
 class EducatorsController < ApplicationController
@@ -13,6 +19,7 @@ class EducatorsController < ApplicationController
     @lesson_plans = LessonPlan.where(educator_id: current_educator.id).all
   end
 
+  # Route to updte a given educator when parameters are changed
   def update
     respond_to do |format|
       if @educator.update(educator_params)
@@ -40,11 +47,14 @@ class EducatorsController < ApplicationController
     end
   end
   private
+
   # This will set the educator for the relevant routes
   def set_educator
     @educator = current_educator
   end
-  #This will allow certain params to work for this controller
+  
+  # This will allow certain params to work for this controller
+  # @return [Hash] A hash of params that can be sent to the controller 
   def educator_params
     params.require(:educator).permit(:paperwork)
   end

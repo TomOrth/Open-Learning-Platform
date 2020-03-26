@@ -1,3 +1,9 @@
+# Project Name: Open Learning Platform
+# Descriptin: Platform for K-12 educators to upload lesson plans
+# Filename: lesson_plans_controller.rb
+# Description: A controller for the lesson plans of the site
+# Last date modified: 3/26/2020 
+
 # This controller will handle different actions for a +LessonPlan+
 class LessonPlansController < ApplicationController
   before_action :set_lesson_plan, only: [:show, :edit, :update, :destroy]
@@ -65,6 +71,7 @@ class LessonPlansController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through.
+    # @return [Hash] The param hash that is allowed to be sent to the controller
     def lesson_plan_params
       params.require(:lesson_plan).permit(:name, :description, contents: [])
     end

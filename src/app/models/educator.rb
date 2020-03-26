@@ -1,3 +1,9 @@
+# Project Name: Open Learning Platform
+# Descriptin: Platform for K-12 educators to upload lesson plans
+# Filename: educator.rb
+# Description: A model for the educator table
+# Last date modified: 3/26/2020
+
 # This is mdoel for the +Educator+ user
 # Relevant schema:
 #   first_name: string

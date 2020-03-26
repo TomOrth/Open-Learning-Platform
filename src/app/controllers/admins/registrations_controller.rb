@@ -1,5 +1,11 @@
 # frozen_string_literal: true
 
+# Project Name: Open Learning Platform
+# Descriptin: Platform for K-12 educators to upload lesson plans
+# Filename: registrations_controller.rb
+# Description: A controller for the registration of admins
+# Last date modified: 3/26/2020
+
 # Registration controller for the +Admin+ user
 # If new parameters for registration were needed, they'd be place here
 # This is used by devise internally

@@ -1,3 +1,9 @@
+# Project Name: Open Learning Platform
+# Descriptin: Platform for K-12 educators to upload lesson plans
+# Filename: dmc_as_controller.rb
+# Description: A controller for the DMCA takedown of the site
+# Last date modified: 3/26/2020
+
 # This controller handles all DMCA takedowns
 class DmcasController < ApplicationController
   before_action :set_dmca, only: [:show, :edit, :update, :destroy]
@@ -70,6 +76,7 @@ class DmcasController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through.
+    # @return [Hash] A hash of the parameters that can be sent to the controller
     def dmca_params
       params.require(:dmca).permit(:name, :description, :lesson_plan)
     end
