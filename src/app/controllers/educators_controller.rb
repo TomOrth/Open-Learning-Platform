@@ -10,7 +10,7 @@ class EducatorsController < ApplicationController
   # A group of before_actions
   # These will set the educator for routes and authenticate for the proper routes
   before_action :set_educator, only: [:update, :show]
-  before_action :authenticate_educator!, skip: [:verify]
+  before_action :authenticate_educator!, only: [:update, :show]
   before_action :authenticate_admin!, only: [:verify]
 
   # Route: GET /educator/:id where :id is the educator id
