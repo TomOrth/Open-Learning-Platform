@@ -19,6 +19,10 @@
     <%= f.text_field :description %>
   </div>
   <div class="field">
+    <%= f.label :topic %><br />
+    <%= f.select :topic, Topic.names %>
+  </div>
+  <div class="field">
     <%= f.label :contents %><br />
     <%= f.file_field :contents, multiple: true %>
   </div>

@@ -11,9 +11,16 @@ class HomeController < ApplicationController
   # This will display the main page
   # This will also allow for educators to search for lesson plans
   def index
+    @topics = Topic.names + ["All"]
+    @topics = @topics.map{|topic| [topic, topic]}
     @search = home_permitted_params[:search]
+    @topic = home_permitted_params[:topic]
     if @search
-        @lesson_plans = LessonPlan.where("name LIKE ?", "%#{@search}%").all
+        if @topic == "All"
+          @lesson_plans = LessonPlan.where("name LIKE ?", "%#{@search}%").all
+        else
+          @lesson_plans = LessonPlan.where("name LIKE ?", "%#{@search}%").where(topic: @topic).all
+        end
     else
       @lesson_plans = []
     end
@@ -23,6 +30,6 @@ class HomeController < ApplicationController
   # This will allow trusted params for the home controller
   # @return [Hash] The parameters that can be sent to the controller
   def home_permitted_params
-    params.permit(:search, :commit)
+    params.permit(:search, :commit, :topic)
   end
 end

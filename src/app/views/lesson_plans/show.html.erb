@@ -11,6 +11,9 @@
   <% end %>
 </ul>
 
+<p>Topic: <%= @lesson_plan.topic %></p>
+
 <% if current_educator.id == @lesson_plan.id %> 
   <%= link_to 'Edit', edit_lesson_plan_path(@lesson_plan) %>
 <% end %>
+<%= link_to 'Back', current_educator %>

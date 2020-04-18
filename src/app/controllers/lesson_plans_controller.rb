@@ -2,7 +2,7 @@
 # Descriptin: Platform for K-12 educators to upload lesson plans
 # Filename: lesson_plans_controller.rb
 # Description: A controller for the lesson plans of the site
-# Last date modified: 3/26/2020 
+# Last date modified: 4/18/2020 
 
 # This controller will handle different actions for a +LessonPlan+
 class LessonPlansController < ApplicationController
@@ -73,6 +73,6 @@ class LessonPlansController < ApplicationController
     # Only allow a list of trusted parameters through.
     # @return [Hash] The param hash that is allowed to be sent to the controller
     def lesson_plan_params
-      params.require(:lesson_plan).permit(:name, :description, contents: [])
+      params.require(:lesson_plan).permit(:name, :description, :topic, contents: [])
     end
 end
