@@ -40,7 +40,7 @@ Please run the following. `sudo yum install postgresql-libs postgresql-devel`
 
 ### Running the application
 
-Ensure that you are in the `src` directory of the repository, and then run this command: `./runserver.sh`. This script will run the server and bind it to the machine's IP address to view it.
+Ensure that you are in the `src` directory of the repository, and then run this command: `rails s --binding=x.x.x.x`, where x.x.x.x is the IP address of your machine.  Note: if you cannot find the IP address of your machine, use the script in `src` called `runserver.sh`. All you need to run it is: `./runserver.sh` This script will run the server and bind it to the machine's IP address to view it.
 
 To view the server, go to your browser and type in `localhost:3000` if the server is running on your machine.  If the server is running on a remote VM or machine, type in the browser `<ip or url for machine>:3000` and replace <ip or url for machine> with the either the ip address or the url/name of the machine. For example, for my project on my VM, you would type in your browser `csc415-server34.hpc.tcnj.edu:3000`
 
