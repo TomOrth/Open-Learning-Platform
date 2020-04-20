@@ -12,7 +12,7 @@ https://gorails.com/setup/
 
 `git clone https://github.com/TomOrth/Open-Learning-Platform`
 
-Once cloned, `cd src` and then run the following commands to install dependcies
+Once cloned, cd into the repository, then `cd src` and then run the following commands to install dependcies
 
 `bundle install`
 `yarn install`
@@ -32,12 +32,12 @@ $ pg_ctl -D /usr/local/var/postgres start
 Please run the following. `sudo yum install postgresql-libs postgresql-devel`
 
 ### Create the databases and perform migration:
-
+```
     rake db:create
     rake db:migrate:reset
     rake db:migrate
     rake db:seed
-
+```
 ### Running the application
 
 Ensure that you are in the `src` directory of the repository, and then run this command: `rails s --binding=x.x.x.x`, where x.x.x.x is the IP address of your machine. If you are on a linux machine (such as the TCNJ VMs), you can run `ip addr show eth0` and your IP address will be the numbers, seperated by dots after `inet`. Do not include the `/<number>` on the end of the IP address.
@@ -53,3 +53,6 @@ You will need an account for the Sendgrid API to send emails within the applicat
 
 * SENDGRID_USERNAME - The username for your sendgrid api account
 * SENDGRID_PASSWORD - The password for your sendgrid api account
+
+For development purposes, you may want to use [Figaro](https://github.com/laserlemon/figaro) for the enviornment variables. Otherwise, you can set them as normally would.
+If running of my VM for SWE, these variables are already setup properly for testing and demo purposes
