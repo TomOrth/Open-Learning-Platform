@@ -46,7 +46,7 @@ To view the server, go to your browser and type in `localhost:3000` if the serve
 
 NOTE: If you get an error about the host you are using, you will need to add this line to `config/environments/development.rb`:
 
-`config.hosts << <host name>` where <host name> is the name of your server/host for the rails application
+`config.hosts << <host name>` where `<host name>` is the name of your server/host for the rails application
 
 ### Necessary environment variables
 You will need an account for the Sendgrid API to send emails within the application and set these two environment variables
