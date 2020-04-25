@@ -2,7 +2,7 @@
 # Descriptin: Platform for K-12 educators to upload lesson plans
 # Filename: home_controller.rb
 # Description: A controller for the homepage
-# Last date modified: 3/26/2020
+# Last date modified: 4/18/2020
 
 # This controller is the main page controller
 # This will route to the main page of the application
