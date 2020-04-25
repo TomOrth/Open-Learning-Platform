@@ -7,9 +7,11 @@
       </li>
       <% if current_educator %>
         <%= link_to('Profile', educator_path(current_educator), method: :get, :class => "nav-link") %>
+        <li class="nav-link">Currently logged in as: Educator</li> 
         <%= link_to('Logout', destroy_educator_session_path, method: :delete, :class => "nav-link") %>
       <% elsif current_admin %>
         <%= link_to('Profile', admin_path(current_admin), method: :get, :class => "nav-link") %>
+        <li class="nav-link">Currently logged in as: Admin</li>
         <%= link_to('Logout', destroy_admin_session_path, method: :delete, :class => "nav-link") %>
       <% else %>
         <%= link_to('Educator Log-in', new_educator_session_path, method: :get, :class => "nav-link") %>
