@@ -8,6 +8,11 @@ NOTE: Installation instructions based off of Ethan Ziegler's [README](https://gi
 Ruby (2.7.0) & Rails (6.0.2.1): 
 https://gorails.com/setup/
 
+### Install Node and Yarn
+
+For nodejs, follow the appropriate guide for your OS: https://nodejs.org/en/download/package-manager/ (Choose a recent version of node. ~Version 13)
+For yarn: https://classic.yarnpkg.com/en/docs/install/#mac-stable
+
 ### Install this repository: 
 
 `git clone https://github.com/TomOrth/Open-Learning-Platform`
