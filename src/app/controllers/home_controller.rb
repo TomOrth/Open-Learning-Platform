@@ -17,6 +17,7 @@ class HomeController < ApplicationController
     @topic = home_permitted_params[:topic]
     if @search
         if @topic == "All"
+          # https://stackoverflow.com/questions/9708409/rails-how-to-find-by-a-field-containing-a-certain-string
           @lesson_plans = LessonPlan.where("name LIKE ?", "%#{@search}%").all
         else
           @lesson_plans = LessonPlan.where("name LIKE ?", "%#{@search}%").where(topic: @topic).all
