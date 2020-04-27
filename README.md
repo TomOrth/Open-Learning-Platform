@@ -58,6 +58,7 @@ You will need an account for the Sendgrid API to send emails within the applicat
 
 * SENDGRID_USERNAME - The username for your sendgrid api account
 * SENDGRID_PASSWORD - The password for your sendgrid api account
+* DOMAIN            - Domain of the application
 
 For development purposes, you may want to use [Figaro](https://github.com/laserlemon/figaro) for the enviornment variables. Otherwise, you can set them as normally would.
 If running of my VM for SWE, these variables are already setup properly for testing and demo purposes
