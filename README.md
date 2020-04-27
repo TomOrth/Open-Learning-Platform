@@ -47,7 +47,11 @@ Please run the following. `sudo yum install postgresql-libs postgresql-devel`
 
 Ensure that you are in the `src` directory of the repository, and then run this command: `rails s --binding=x.x.x.x`, where x.x.x.x is the IP address of your machine. If you are on a linux machine (such as the TCNJ VMs), you can run `ip addr show eth0` and your IP address will be the numbers, seperated by dots after `inet`. Do not include the `/<number>` on the end of the IP address.
 
-To view the server, go to your browser and type in `localhost:3000` if the server is running on your machine.  If the server is running on a remote VM or machine, type in the browser `<ip or url for machine>:3000` and replace <ip or url for machine> with the either the ip address or the url/name of the machine. For example, for my project on my VM, you would type in your browser `csc415-server34.hpc.tcnj.edu:3000`
+To view the server, go to your browser and type in `localhost:3000` if the server is running on your machine.  If the server is running on a remote VM or machine, type in the browser `<ip or url for machine>:3000` and replace `<ip or url for machine>` with the either the ip address or the url/name of the machine. For example, for my project on my VM, you would type in your browser `csc415-server34.hpc.tcnj.edu:3000`. If your server is on your machine your accessing it from, you can go to `localhost:3000`
+
+Please see the (wiki)[https://github.com/TomOrth/Open-Learning-Platform/wiki/Installation-Guide] for a more in-depth/alternate description of how to install this server properly.
+
+
 
 NOTE: If you get an error about the host you are using, you will need to add this line to `config/environments/development.rb`:
 
