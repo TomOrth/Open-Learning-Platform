@@ -6,6 +6,9 @@
 
 # The conroller class for the admin
 # Any actions for the +Admin+ user will be handled here
+#
+# All code added by Thomas Orth
+
 class AdminsController < ApplicationController
     # Sets the admin instance variable
     before_action :set_admin

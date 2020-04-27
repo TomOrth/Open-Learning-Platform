@@ -11,6 +11,8 @@
 #   encrypted_password: string
 #   email: string
 #   paperwork: ActiveStorage::Attached::One
+# Initially added by devise via a generator
+# Paperwork related code and lesson plans were added by Thomas Orth
 class Educator < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

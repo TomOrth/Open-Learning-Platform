@@ -4,6 +4,8 @@
 # Description: A controller for the homepage
 # Last date modified: 4/18/2020
 
+# Code added by Thomas Orth. Source of where the "like" statement was found is given
+
 # This controller is the main page controller
 # This will route to the main page of the application
 class HomeController < ApplicationController

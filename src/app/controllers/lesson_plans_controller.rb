@@ -4,6 +4,9 @@
 # Description: A controller for the lesson plans of the site
 # Last date modified: 4/18/2020 
 
+# Majority of code added by rails scaffold
+# before_action, educator_id (Line 34), and permitted params implemented/changed by Thomas Orth
+
 # This controller will handle different actions for a +LessonPlan+
 class LessonPlansController < ApplicationController
   before_action :set_lesson_plan, only: [:show, :edit, :update, :destroy]

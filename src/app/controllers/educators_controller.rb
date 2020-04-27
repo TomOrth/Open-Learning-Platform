@@ -4,6 +4,8 @@
 # Description: A controller for the educators of the site
 # Last date modified: 3/26/2020
 
+# All code added by Thomas Orth. Code for verify and update was adopted from standard rails scaffold code to display success and error messages when updated
+
 # This is the controller for the +Educator+ user
 # This is where actions related to the controller will be
 class EducatorsController < ApplicationController

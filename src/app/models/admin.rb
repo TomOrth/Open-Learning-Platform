@@ -8,6 +8,7 @@
 # The schema (at least relevant attributes) is:
 #   email: string
 #   encrypted_password: string
+# Code was added by Devise via the lib's generator
 class Admin < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
